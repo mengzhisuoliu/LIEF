@@ -96,6 +96,6 @@ def x86_lock(inst: lief.assembly.x86.Instruction) -> None:
 
     if inst.has_lock_prefix or inst.is_atomic:
         print(f"{inst} is atomic")
-    elif inst.is_lockable and (locked := inst.lock() is not None):
+    elif inst.is_lockable and (locked := inst.lock()) is not None:
         print(f"atomic version of {inst}: {locked}")
     # lief-doc: x86-lock-end

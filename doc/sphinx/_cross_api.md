@@ -1251,6 +1251,12 @@
 
 .. extended utils =============================================================
 
+.. |lief-is-extended| lief-api:: lief.__extended__
+
+    :rust:func:`lief::is_extended`
+    :py:data:`lief._lief.__extended__`
+    :cpp:func:`LIEF::is_extended`
+
 .. |lief-extended-version-info| lief-api:: lief.extended_version_info()
 
     :rust:func:`lief::extended_version_info`
@@ -1279,6 +1285,10 @@
     :rust:enum:`lief::assembly::Instructions`
     :cpp:class:`LIEF::assembly::Instruction`
     :py:class:`lief.assembly.Instruction`
+
+.. |lief-asm-instruction-as| lief-api:: LIEF::assembly::Instruction::as()
+
+    :cpp:func:`LIEF::assembly::Instruction::as`
 
 .. |lief-asm-x86-instruction| lief-api:: lief.assembly.x86.Instruction
 
@@ -1451,6 +1461,24 @@
 
 .. Runtime ====================================================================
 
+.. |lief-runtime-enabled| lief-api:: lief.runtime.enabled
+
+    :rust:func:`lief::runtime::enabled`
+    :py:attr:`lief.runtime.enabled`
+    :cpp:func:`LIEF::runtime::is_enabled`
+
+.. |lief-runtime-platform| lief-api:: lief.runtime.platform
+
+    :rust:func:`lief::runtime::platform`
+    :py:attr:`lief.runtime.platform`
+    :cpp:func:`LIEF::runtime::platform`
+
+.. |lief-runtime-arch| lief-api:: lief.runtime.arch
+
+    :rust:func:`lief::runtime::arch`
+    :py:attr:`lief.runtime.arch`
+    :cpp:func:`LIEF::runtime::arch`
+
 .. |lief-runtime-host| lief-api:: lief.runtime.Host
 
     :rust:struct:`lief::runtime::Host`
@@ -1530,6 +1558,24 @@
     :py:meth:`lief.runtime.Memory.mmap_hint`
     :cpp:func:`LIEF::runtime::Memory::mmap_hint`
 
+.. |lief-runtime-memory-chunk| lief-api:: lief.runtime.Memory.Chunk
+
+    :rust:struct:`lief::runtime::memory::Chunk`
+    :py:class:`lief.runtime.Memory.Chunk`
+    :cpp:class:`LIEF::runtime::Memory::Chunk`
+
+.. |lief-runtime-memory-chunk-deallocate| lief-api:: lief.runtime.Memory.Chunk.deallocate()
+
+    :rust:method:`lief::runtime::memory::Chunk::deallocate [struct]`
+    :py:meth:`lief.runtime.Memory.Chunk.deallocate`
+    :cpp:func:`LIEF::runtime::Memory::Chunk::deallocate`
+
+.. |lief-runtime-memory-chunk-cache_flush| lief-api:: lief.runtime.Memory.Chunk.cache_flush()
+
+    :rust:method:`lief::runtime::memory::Chunk::cache_flush [struct]`
+    :py:meth:`lief.runtime.Memory.Chunk.cache_flush`
+    :cpp:func:`LIEF::runtime::Memory::Chunk::cache_flush`
+
 .. |lief-runtime-memorylayout| lief-api:: lief.runtime.MemoryLayout
 
     :py:class:`lief.runtime.MemoryLayout`
@@ -1558,6 +1604,24 @@
     :rust:method:`lief::runtime::module::Module::dump [trait]`
     :py:meth:`lief.runtime.Module.dump`
     :cpp:func:`LIEF::runtime::Module::dump`
+
+.. |lief-runtime-module_from_name| lief-api:: lief.runtime.module_from_name()
+
+    :rust:func:`lief::runtime::module_from_name`
+    :py:func:`lief.runtime.module_from_name`
+    :cpp:func:`LIEF::runtime::module_from_name`
+
+.. |lief-runtime-module_from_path| lief-api:: lief.runtime.module_from_path()
+
+    :rust:func:`lief::runtime::module_from_path`
+    :py:func:`lief.runtime.module_from_path`
+    :cpp:func:`LIEF::runtime::module_from_path`
+
+.. |lief-runtime-module_from_addr| lief-api:: lief.runtime.module_from_addr()
+
+    :rust:func:`lief::runtime::module_from_addr`
+    :py:func:`lief.runtime.module_from_addr`
+    :cpp:func:`LIEF::runtime::module_from_addr`
 
 .. |lief-runtime-linux-module| lief-api:: lief.runtime.linux.Module
 
