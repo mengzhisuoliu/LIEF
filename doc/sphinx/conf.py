@@ -4,6 +4,7 @@ from pathlib import Path
 sys.path.insert(0, Path(__file__).parent.as_posix())
 
 from sphinx.application import Sphinx
+from sphinx_lief_doc.ai import setup as setup_ai
 from sphinx_lief_doc.config import init_config as lief_init_config
 from sphinx_lief_doc.img_comparison import setup as setup_img_comparison
 from sphinx_lief_doc.inheritance_diagram import LIEFInheritanceDiagram
@@ -100,6 +101,7 @@ def setup(app: Sphinx):
     setup_plugin_packages(app)
     setup_sdk_packages(app)
     setup_seo(app)
+    setup_ai(app)
 
     app.add_directive("lief-inheritance", LIEFInheritanceDiagram)
     app.set_translator("html", HTML5Translator)

@@ -104,3 +104,10 @@ ELF, PE, Mach-O, COFF, Android formats, and more in C++, Python, and Rust.
   changelog
 
 ```
+
+```{eval-rst}
+.. toctree::
+  :hidden:
+
+  ai
+```
