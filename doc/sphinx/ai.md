@@ -2,7 +2,7 @@
 description: Read LIEF documentation as resolved Markdown or retrieve guides and API symbols from versioned JSON indexes with canonical links and content hashes.
 ---
 
-# Documentation for AI assistants
+# {fa}`fa-solid fa-robot` Documentation for AI
 
 Every documentation page has a Markdown copy at the same path with `.html`
 replaced by `.md`. For example, `runtime/intro.html` has a `runtime/intro.md`
