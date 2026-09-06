@@ -68,6 +68,10 @@ class runtime_Memory_Chunk : public Mirror<LIEF::runtime::Memory::Chunk> {
     return get().is_valid();
   }
 
+  void deallocate(uint32_t& err) {
+    details::make_error(get().deallocate(), err);
+  }
+
   auto to_string() const {
     return to_unique_string(get().to_string());
   }

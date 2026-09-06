@@ -153,6 +153,11 @@ impl Chunk {
     pub fn is_valid(&self) -> bool {
         self.ptr.is_valid()
     }
+
+    /// Deallocates this mmaped memory chunk.
+    pub fn deallocate(&mut self) -> Result<(), Error> {
+        to_ok_result!(ffi::runtime_Memory_Chunk::deallocate, self.ptr.pin_mut());
+    }
 }
 
 impl std::fmt::Display for Chunk {

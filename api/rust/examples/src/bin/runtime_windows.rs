@@ -205,7 +205,7 @@ fn memory_example() {
         Some(m) => m,
         None => {
             eprintln!("Failed to dlopen kernel32.dll");
-            let _ = runtime::Memory::munmap(&mut chunk);
+            let _ = chunk.deallocate();
             return;
         }
     };
@@ -214,7 +214,7 @@ fn memory_example() {
     let p_write_file = kernel32.dlsym("WriteFile".to_string());
     if p_get_std_handle.is_null() || p_write_file.is_null() {
         eprintln!("Failed to resolve kernel32 symbols");
-        let _ = runtime::Memory::munmap(&mut chunk);
+        let _ = chunk.deallocate();
         return;
     }
     let p_get_std_handle = p_get_std_handle as u64;
@@ -304,7 +304,7 @@ fn memory_example() {
     unsafe { hello_jit() };
 
     // Don't miss good practices!
-    let _ = runtime::Memory::munmap(&mut chunk);
+    let _ = chunk.deallocate();
     // lief-doc: memory-end
 }
 

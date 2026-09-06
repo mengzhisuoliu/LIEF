@@ -262,6 +262,15 @@ fn test_memory() {
     assert!(chunk.is_valid());
 
     Memory::munmap(&mut chunk);
+
+    let mut owned = Memory::mmap(
+        0x1000,
+        MmapFlags::ANONYMOUS | MmapFlags::PRIVATE,
+        Perm::READ | Perm::WRITE,
+    )
+    .unwrap();
+    assert!(owned.is_valid());
+    assert!(owned.deallocate().is_ok());
 }
 
 fn test_memory_hint() {

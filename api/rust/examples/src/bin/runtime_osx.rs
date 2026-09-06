@@ -146,7 +146,7 @@ fn memory_example() {
         Some(m) => m,
         None => {
             eprintln!("Failed to dlopen libSystem.B.dylib");
-            let _ = runtime::Memory::munmap(&mut chunk);
+            let _ = chunk.deallocate();
             return;
         }
     };
@@ -154,7 +154,7 @@ fn memory_example() {
     let p_write = libsystem.dlsym("write".to_string());
     if p_write.is_null() {
         eprintln!("Failed to resolve write");
-        let _ = runtime::Memory::munmap(&mut chunk);
+        let _ = chunk.deallocate();
         return;
     }
     let p_write = p_write as u64;
@@ -222,7 +222,7 @@ fn memory_example() {
     unsafe { hello_jit() };
 
     // Don't miss good practices!
-    let _ = runtime::Memory::munmap(&mut chunk);
+    let _ = chunk.deallocate();
     // lief-doc: memory-end
 }
 

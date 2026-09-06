@@ -19,6 +19,7 @@ pub mod ffi {
         fn make_ro(self: Pin<&mut runtime_Memory_Chunk>);
         fn cache_flush(self: Pin<&mut runtime_Memory_Chunk>);
         fn is_valid(self: &runtime_Memory_Chunk) -> bool;
+        fn deallocate(self: Pin<&mut runtime_Memory_Chunk>, err: Pin<&mut u32>);
         fn to_string(self: &runtime_Memory_Chunk) -> UniquePtr<CxxString>;
 
         #[Self = "runtime_Memory"]

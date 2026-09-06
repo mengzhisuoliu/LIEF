@@ -192,7 +192,7 @@ fn memory_example() {
     }
 
     // Don't miss good practices!
-    let _ = runtime::Memory::munmap(&mut chunk);
+    let _ = chunk.deallocate();
     // lief-doc: memory-end
 }
 
